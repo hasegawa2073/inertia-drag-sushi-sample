@@ -1,14 +1,32 @@
 :root {
+  --color-white: #ffffff;
   --color-green: #5f873f;
   --color-orange: #e2953a;
   --color-brown: #c18134;
   --color-light-brown: #e9ab63;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-green);
+  background: linear-gradient(to bottom, var(--color-green), var(--color-green) 49.9%, var(--color-light-brown) 50%);
+}
+
+.sushi {
+  position: relative;
+}
+.sushi__name {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-family: "Yuji Mai", serif;
+  font-size: clamp(4rem, 10vw, 12rem);
+  color: var(--color-white);
+  margin-top: 48px;
 }
 
 .slider {
@@ -16,8 +34,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  overflow-x: hidden;
-  background: linear-gradient(to bottom, transparent, transparent 49.9%, var(--color-light-brown) 50%);
+  overflow-x: scroll;
 }
 .slider__itemsContainer {
   position: relative;
@@ -49,4 +66,18 @@ body {
   width: 100%;
   pointer-events: none;
   user-select: none;
+}
+
+.js-grabbing {
+  cursor: grabbing;
+}
+
+.js-intersect {
+  position: absolute;
+  left: calc(50% - 10px);
+  display: block;
+  width: 20px;
+  height: 50vh;
+  background-color: transparent;
+  margin-top: 25vh;
 }
