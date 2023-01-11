@@ -1,9 +1,12 @@
 import { sliderItems } from "../variables/variable.js";
 export const grab = () => {
-    window.addEventListener("mousedown", (e) => {
-        sliderItems?.classList.toggle("js-grabbing");
+    sliderItems?.addEventListener("mousedown", () => {
+        sliderItems?.classList.add("js-grabbing");
     });
-    window.addEventListener("mouseup", (e) => {
-        sliderItems?.classList.toggle("js-grabbing");
+    sliderItems?.addEventListener("mouseup", () => {
+        sliderItems?.classList.remove("js-grabbing");
+    });
+    sliderItems?.addEventListener("mouseleave", () => {
+        sliderItems?.classList.remove("js-grabbing");
     });
 };
